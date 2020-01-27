@@ -113,17 +113,15 @@ const Blog = props => {
       />
       <Container>
         <Padding>
-          <section style={{marginTop: '80px'}}>
-            <h1 style={{textAlign: 'center', fontSize: '2em'}}>Articles</h1>
-            <GridContainer>
-              {console.log(postNodes)}
-              {postNodes.map((cur, index) => {
-                return (
-                  <ImageCard key={index} node={cur} />
-                )
-              })}
-            </GridContainer>
-          </section>
+          <h1 style={{textAlign: 'center'}}>Articles</h1>
+          <GridContainer>
+            {console.log(postNodes)}
+            {postNodes.map((cur, index) => {
+              return (
+                <ImageCard key={index} node={cur} />
+              )
+            })}
+          </GridContainer>
         </Padding>
       </Container>
     </Layout>

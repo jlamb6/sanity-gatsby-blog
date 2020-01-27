@@ -30,7 +30,7 @@ const Services = () => {
         }}
       />
       <Container>
-        <section id='sell'>
+        <div id='sell'>
           <Padding>
             <SplitView
               title='Sell your home'
@@ -41,13 +41,13 @@ const Services = () => {
               left
             />
           </Padding>
-        </section>
-        <section id='services'>
+        </div>
+        <div id='services'>
           <Padding wide>
             <ContentList title='All the services you need' />
           </Padding>
-        </section>
-        <section id='buy'>
+        </div>
+        <div id='buy'>
           <Padding>
             <SplitView
               title='Buy a home'
@@ -57,7 +57,7 @@ const Services = () => {
               img={trees}
             />
           </Padding>
-        </section>
+        </div>
       </Container>
     </Layout>
   )
