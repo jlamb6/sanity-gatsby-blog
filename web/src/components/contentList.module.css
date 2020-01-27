@@ -1,0 +1,80 @@
+.small {
+    position: relative;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(91,107,174,.15);
+    height: 40px;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.title {
+    font-size: .8em;
+    text-align: left;
+    margin-left: 10px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.highlight {
+    position: absolute;
+    height: 100%;
+    width: 3px;
+}
+
+.largeContainerIcon {
+    float: left;
+    width: 60px;
+    height: 60px;
+    margin-right: 20px;
+    background-color: #eef9fd;
+    border-radius: 20px;
+    line-height: 65px;
+    display: flex;
+    justify-content: center;
+}
+
+.largeBody {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+
+    @nest & h4 {
+      margin: 0;
+    }
+
+    @nest & p {
+      margin-top: .5rem;
+      font-size: .825em;
+    }
+}
+
+.list__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 24px;
+}
+
+.header {
+    margin-bottom: 4rem;
+    text-align: center;
+}
+
+.list {
+    padding: 120px 0;
+
+    @nest & ul {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-gap: 24px;
+    }
+
+    @nest & li {
+      list-style: none;
+    }
+}
+
+.largeIcon {
+    width: 60%;
+}

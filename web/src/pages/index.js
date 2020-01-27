@@ -5,17 +5,26 @@ import {
   filterOutDocsWithoutSlugs,
   filterOutDocsPublishedInTheFuture
 } from '../lib/helpers'
-import BlogPostPreviewList from '../components/blog-post-preview-list'
 import Container from '../components/container'
 import GraphQLErrorList from '../components/graphql-error-list'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
+import Landing from '../components/landing'
+import Padding from '../components/padding'
+import SplitView from '../components/splitView'
+import IconBox from '../components/iconBox'
+import ContactForm from '../components/contactForm'
+import BackgroundOne from '../components/images/landing-one.png'
+import trees from '../components/images/palm-trees.jpg'
+import financeIcon from '../components/svgIcons/finance.svg'
+import homeIcon from '../components/svgIcons/real-estate.svg'
+import moneyIcon from '../components/svgIcons/money.svg'
 
 export const query = graphql`
   fragment SanityImage on SanityMainImage {
     crop {
       _key
-      _type
+      _type 
       top
       bottom
       left
@@ -34,7 +43,7 @@ export const query = graphql`
     }
   }
 
-  query IndexPageQuery {
+  query BlogPageQuery {
     site: sanitySiteSettings(_id: { regex: "/(drafts.|)siteSettings/" }) {
       title
       description
@@ -89,21 +98,85 @@ const IndexPage = props => {
   }
 
   return (
-    <Layout>
+    <Layout color='white'>
       <SEO
         title={site.title}
         description={site.description}
         keywords={site.keywords}
       />
+      <Landing
+        title='Find your home in Utah.'
+        buttonTitleOne='Our Services'
+        buttonLinkOne='services'
+        buttonTitleTwo='Contact Us'
+        buttonLinkTwo='contact'
+        backgroundImage={BackgroundOne}
+      />
       <Container>
-        <h1 hidden>Welcome to {site.title}</h1>
-        {postNodes && (
-          <BlogPostPreviewList
-            title='Latest blog posts'
-            nodes={postNodes}
-            browseMoreHref='/archive/'
+        <Padding>
+          <SplitView
+            title='More choice, less cost'
+            body='Here at Wyvern Real Estate Group we strive
+                to offer you a Real Estate experience like no
+                other.
+                Our unique approach  to handling payment
+                and service allows you to get what you want
+                without paying us a traditional commission,
+                and therefore saving you money!'
+            link='/services'
+            linkTitle='View our services'
+            img={trees}
           />
-        )}
+        </Padding>
+        <section>
+          <Padding>
+            <h1
+              className='content__header'
+              style={{
+                fontWeight: '700',
+                fontSize: '2rem',
+                textAlign: 'center',
+                lineHeight: '1.4em'
+              }}
+            >
+              Let's get started
+            </h1>
+            <div
+              style={{
+                display: 'grid',
+                gridTemplateColumns: '1fr 1fr 1fr',
+                gridGap: '20px',
+                textAlign: 'center',
+                marginTop: '80px'
+              }}
+            >
+              <IconBox
+                icon={moneyIcon}
+                title='Money Icon'
+                subTitle='Sell Your Home'
+                body='We provide all the services you need to sell your home for top dollar'
+                link='/services#sell'
+              />
+              <IconBox
+                icon={homeIcon}
+                title='Home Icon'
+                subTitle='Buy a Home'
+                body='Find the perfect home for the next step in your life'
+                link='/services#buy'
+              />
+              <IconBox
+                icon={financeIcon}
+                title='Finance Icon'
+                subTitle='Market Analysis'
+                body='Find out what your home is worth so you dont leave money on the table'
+                link='/services#analysis'
+              />
+            </div>
+          </Padding>
+        </section>
+        <Padding>
+          <ContactForm />
+        </Padding>
       </Container>
     </Layout>
   )

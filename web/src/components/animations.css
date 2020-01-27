@@ -1,0 +1,136 @@
+.animate {
+  opacity: 0;
+}
+
+.fade-in {
+  opacity: 0;
+  animation-name: fade-in;
+  animation-duration: .6s;
+  animation-timing-function: cubic-bezier(0.54, 0.31, 0.58, 0.82);
+  animation-fill-mode: forwards;
+}
+
+.fade {
+  opacity: 0;
+  transform: scale(.85,.85);
+  animation-name: fade;
+  animation-duration: .6s;
+  animation-timing-function: cubic-bezier(0.54, 0.31, 0.58, 0.82);
+  animation-fill-mode: forwards;
+}
+
+.scale {
+  transform: scale(.5,.5);
+  opacity: 0;
+  animation-name: scale;
+  animation-duration: .6s;
+  animation-timing-function: cubic-bezier(0.54, 0.31, 0.58, 0.82);
+  animation-fill-mode: forwards;
+}
+
+.delay {
+  animation-delay: .4s;
+}
+
+.delay.full {
+  animation-delay: .6s;
+}
+
+.toTopCorner {
+  opacity: 0;
+  animation-name: toTopCorner;
+  animation-duration: .6s;
+  animation-timing-function: cubic-bezier(0.54, 0.31, 0.58, 0.82);
+  animation-fill-mode: forwards;
+}
+
+.toBottomCorner {
+  opacity: 0;
+  animation-name: toBottomCorner;
+  animation-duration: .6s;
+  animation-timing-function: cubic-bezier(0.54, 0.31, 0.58, 0.82);
+  animation-fill-mode: forwards;
+}
+
+.flow-up {
+  opacity: 0;
+  animation-name: flow-up;
+  animation-duration: .4s;
+  animation-timing-function: cubic-bezier(0.54, 0.31, 0.58, 0.82);
+  animation-fill-mode: forwards;
+}
+
+@keyframes flow-up {
+  0% {
+      opacity: 0;
+      transform: translateY(18px);
+  }
+  60% {
+      opacity: .6;
+      transform: translateY(-12px);
+  }
+  100% {
+      opacity: 1;
+      transform: translatey(0);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+      opacity: 0;
+      transform: translateY(18px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+
+@keyframes fade {
+  0% {
+      opacity: 0;
+      transform: scale(.85,.85);
+  }
+  100% {
+      opacity: 1;
+      transform: scale(1,1);
+  }
+}
+
+@keyframes scale {
+  0% {
+      opacity: 0;
+      transform: scale(0.5,0.5);
+  }
+  100% {
+      opacity: 1;
+      transform: scale(1,1);
+  }
+}
+
+@keyframes toBottomCorner {
+  0% {
+      opacity: 1;
+      bottom: 15%;
+      left: 10%;
+  }
+  100% {
+      opacity: 1;
+      bottom: 0;
+      left: 0;
+  }
+}
+
+@keyframes toTopCorner {
+  0% {
+      opacity: 1;
+      top: 15%;
+      right: 10%;
+  }
+  100% {
+      opacity: 1;
+      top: 0;
+      right: 0;
+  }
+}

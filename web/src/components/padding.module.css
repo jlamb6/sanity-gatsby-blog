@@ -1,0 +1,13 @@
+.contentContainer {
+  max-width: 960px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 180px auto;
+}
+
+.contentContainerWide {
+  max-width: 1240px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 180px auto;
+}

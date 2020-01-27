@@ -2,8 +2,40 @@
 @import '../styles/custom-properties.css';
 
 .root {
-  position: relative;
+  width: 100%;
+  position: absolute;
   z-index: 100;
+}
+
+.white {
+  color: white;
+
+  @nest & div nav ul li a {
+    display: inline-block;
+    padding: 0.5em;
+    color: inherit; 
+    text-decoration: none;
+  }
+
+  @nest & ul li {
+    margin-left: 2em;
+  }
+
+  @nest & a {
+    display: inline-block;
+    padding: 0.5em;
+    color: inherit;
+    text-decoration: none;
+
+    @media (hover: hover) {
+      @nest &:hover {
+        color: white !important;
+      }
+      @nest &::after {
+        background-color: white !important;
+      }
+    }
+  }
 }
 
 .wrapper {
@@ -12,6 +44,7 @@
   max-width: 960px;
   padding: 1em;
   display: flex;
+  align-items: center;
 
   @media (--media-min-small) {
     padding: 1.5em 1.5em;
@@ -23,16 +56,9 @@
   flex: 1;
 
   @nest & a {
-    display: inline-block;
-    padding: 0.5em;
     color: inherit;
     text-decoration: none;
-
-    @media (hover: hover) {
-      @nest &:hover {
-        color: var(--color-accent);
-      }
-    }
+    padding: 1em;
   }
 }
 
@@ -64,15 +90,35 @@
     padding: 0;
   }
 
+  @nest & ul li {
+    margin-left: 2em;
+  }
+
   @nest & ul li a {
     display: block;
     color: inherit;
     text-decoration: none;
   }
 
+  @nest & ul li a::after {
+    display: block;
+    width: 0;
+    margin: 0 auto;
+    height: 2px;
+    background-color: var(--color-accent);
+    opacity: 0;
+    content: "";
+    transition: .2s;
+  }
+
   @media (hover: hover) {
     @nest & ul li a:hover {
       color: var(--color-accent);
+    }
+
+    @nest & ul li a:hover::after {
+      opacity: 1;
+      width: 100%;
     }
   }
 
@@ -104,7 +150,7 @@
     }
 
     @nest & ul li a {
-      padding: 0.5rem;
+      padding: 0.25rem 0.5rem;
     }
   }
 }
