@@ -39,7 +39,7 @@ const ContactForm = (props) => {
       <div className={styles.contactSmall} id='contact-form'>
         <div className={styles.contactContainer} id='contact'>
           <div className={cn(styles.contact__form, 'animate')}>
-            <form name='contact' method='POST' netlify>
+            <form name='contact' method='POST' data-netlify='true'>
               <div className='animate flow' style={{gridArea: 'fname'}}>
                 <label>First Name</label>
                 <input type='text' name='fname' />
@@ -72,7 +72,7 @@ const ContactForm = (props) => {
         <div id='contact'>
           <h1 className={cn(styles.contact__header, 'animate')}>Contact us today!</h1>
           <div className={cn(styles.contact__form, 'animate')}>
-            <form name='contact' method='POST' style={{margin: '0'}} netlify>
+            <form name='contact' method='POST' style={{margin: '0'}} data-netlify='true'>
               <div className='animate flow' style={{gridArea: 'fname'}}>
                 <label>First Name</label>
                 <input type='text' name='fname' />
