@@ -55,6 +55,7 @@
     background-color: #091540;
     color: #fff;
     font-weight: 600;
+    cursor: pointer;
 
     @media (--media-max-medium) {
       width: 100%;

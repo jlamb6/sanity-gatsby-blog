@@ -28,7 +28,7 @@ const Footer = () => (
           <div className={styles.newsletter__signup}>
             <form name='subscribe' method='POST' netlify>
               <input type='email' placeholder='youremail@site.com' />
-              <button className={styles.button}>Subscribe</button>
+              <button type='submit' className={styles.button}>Subscribe</button>
             </form>
           </div>
         </div>

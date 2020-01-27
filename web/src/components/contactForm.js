@@ -60,7 +60,7 @@ const ContactForm = (props) => {
                 <label>Message</label>
                 <textarea name='message' rows='6' />
               </div>
-              <button className='animate flow' type='button' style={{gridArea: 'submit'}}>Submit</button>
+              <button className='animate flow' type='submit' style={{gridArea: 'submit'}}>Submit</button>
             </form>
           </div>
         </div>
@@ -93,7 +93,7 @@ const ContactForm = (props) => {
                 <label>Message</label>
                 <textarea name='message' rows='6' />
               </div>
-              <button className='animate flow' type='button' style={{gridArea: 'submit'}}>Submit</button>
+              <button type='submit' className='animate flow' style={{gridArea: 'submit'}}>Submit</button>
             </form>
           </div>
         </div>
