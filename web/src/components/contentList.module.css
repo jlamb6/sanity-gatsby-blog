@@ -1,3 +1,6 @@
+@import '../styles/custom-media.css';
+@import '../styles/custom-properties.css';
+
 .small {
     position: relative;
     width: 100%;
@@ -62,16 +65,38 @@
 }
 
 .list {
-    padding: 120px 0;
-
     @nest & ul {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      grid-gap: 24px;
+      padding: 0;
+
+      @media (--media-min-large) {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 24px;
+        margin: 0 -60px;
+      }
+
+      @media (--media-max-large) {
+          grid-template-columns: 1fr 1fr;
+          grid-gap: 24px;
+          margin: 0;
+      }
+
+      @media (--media-max-medium) {
+          display: initial;
+          margin: 0;
+      }
     }
 
     @nest & li {
       list-style: none;
+    }
+
+    @media (--media-max-medium) {
+        padding: 0;
+
+        @nest & h1 {
+            text-align: left;
+        }
     }
 }
 

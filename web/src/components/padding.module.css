@@ -1,8 +1,15 @@
+@import '../styles/custom-media.css';
+@import '../styles/custom-properties.css';
+
 .contentContainer {
   max-width: 960px;
   padding-left: 15px;
   padding-right: 15px;
   margin: 180px auto;
+
+  @media (--media-max-medium) {
+    margin: 60px 0;
+  }
 }
 
 .contentContainerWide {
@@ -10,4 +17,8 @@
   padding-left: 15px;
   padding-right: 15px;
   margin: 180px auto;
+
+  @media (--media-max-medium) {
+    margin: 60px 0;
+  }
 }

@@ -9,6 +9,7 @@ import SplitView from '../components/splitView'
 import bg from '../components/images/kalie.jpg'
 import background from '../components/images/blue-triangle.png'
 import palmTrees from '../components/images/palm-trees.jpg'
+import welcome from '../components/images/welcome.jpg'
 
 const About = () => {
   return (
@@ -33,8 +34,8 @@ const About = () => {
                   It is a place a safety and acceptance.
                   At Lamb&Co, we want to know what home means to you and help you find it.
                   Learn more about the ways we can help you start your new home.'
-            img={palmTrees}
-            alt='palm trees'
+            img={welcome}
+            alt='Welcome sign hanging on a door'
             link='/services/'
             linkTitle='View our services'
             left

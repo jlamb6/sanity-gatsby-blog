@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { graphql } from 'gatsby'
+import {graphql} from 'gatsby'
 import {
   mapEdgesToNodes,
   filterOutDocsWithoutSlugs,
@@ -10,6 +10,7 @@ import GraphQLErrorList from '../components/graphql-error-list'
 import Layout from '../containers/layout'
 import SEO from '../components/seo'
 import Container from '../components/container'
+import GridContainer from '../components/gridContainer'
 import Padding from '../components/padding'
 import LandingSecondary from '../components/landingSecondary'
 import ImageCard from '../components/imageCard'
@@ -114,24 +115,14 @@ const Blog = props => {
         <Padding>
           <section style={{marginTop: '80px'}}>
             <h1 style={{textAlign: 'center', fontSize: '2em'}}>Articles</h1>
-            <div
-              style={{
-                display: 'grid',
-                gridTemplateColumns: '1fr 1fr 1fr',
-                gridGap: '20px',
-                maxWidth: '960px',
-                paddingLeft: '15px',
-                paddingRight: '15px',
-                margin: '80px auto'
-              }}
-            >
+            <GridContainer>
               {console.log(postNodes)}
               {postNodes.map((cur, index) => {
                 return (
                   <ImageCard key={index} node={cur} />
                 )
               })}
-            </div>
+            </GridContainer>
           </section>
         </Padding>
       </Container>

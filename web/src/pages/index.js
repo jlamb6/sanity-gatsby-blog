@@ -13,6 +13,7 @@ import Landing from '../components/landing'
 import Padding from '../components/padding'
 import SplitView from '../components/splitView'
 import IconBox from '../components/iconBox'
+import GridContainer from '../components/gridContainer'
 import ContactForm from '../components/contactForm'
 import BackgroundOne from '../components/images/landing-one.png'
 import trees from '../components/images/palm-trees.jpg'
@@ -141,15 +142,7 @@ const IndexPage = props => {
             >
               Let's get started
             </h1>
-            <div
-              style={{
-                display: 'grid',
-                gridTemplateColumns: '1fr 1fr 1fr',
-                gridGap: '20px',
-                textAlign: 'center',
-                marginTop: '80px'
-              }}
-            >
+            <GridContainer>
               <IconBox
                 icon={moneyIcon}
                 title='Money Icon'
@@ -171,7 +164,7 @@ const IndexPage = props => {
                 body='Find out what your home is worth so you dont leave money on the table'
                 link='/services#analysis'
               />
-            </div>
+            </GridContainer>
           </Padding>
         </section>
         <Padding>

@@ -1,3 +1,6 @@
+@import '../styles/custom-media.css';
+@import '../styles/custom-properties.css';
+
 .contact {
   max-width: 960px;
   width: 100%;
@@ -38,6 +41,10 @@
                          "message message"
                          "submit submit";
     grid-gap: 24px;
+    
+    @media (--media-max-medium) {
+      display: block;
+    }
   }
 
   @nest & button {
@@ -62,5 +69,9 @@
 
   @nest & div label {
     margin-bottom: 6px;
+
+    @media (--media-max-medium) {
+      padding: 4px 0;
+    }
   }
 }

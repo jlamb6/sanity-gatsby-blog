@@ -3,6 +3,7 @@ import React from 'react'
 import Layout from '../containers/layout'
 import SEO from '../components/seo'
 import LandingSecondary from '../components/landingSecondary'
+import Container from '../components/container'
 import SplitView from '../components/splitView'
 import ContentList from '../components/contentList'
 import Padding from '../components/padding'
@@ -28,30 +29,36 @@ const Services = () => {
           third: l3
         }}
       />
-      <section id='sell'>
-        <SplitView
-          title='Sell your home'
-          body='Selling your house is a big deal. You might be moving from your first home or the home your kids grew up in. At Lamb&Co. we understand there is a lot of emotion that goes into it. We will do our best to take as much stress out of it as possible. Utilizing the MLS, Facebook, and Instgram to reach as many people as possible.'
-          link='/contact'
-          linkTitle='Contact Us'
-          img={trees}
-          left
-        />
-      </section>
-      <section id='services'>
-        <Padding wide>
-          <ContentList title='All the services you need' />
-        </Padding>
-      </section>
-      <section id='buy'>
-        <SplitView
-          title='Buy a home'
-          body='Congratulations! You’re buying a home! Here at Lamb&Co. we share in your excitement and want to help you find the best home for you and your family. You will get notified instantly when a new home with your specifications hit the market.'
-          link='/contact'
-          linkTitle='Contact Us'
-          img={trees}
-        />
-      </section>
+      <Container>
+        <section id='sell'>
+          <Padding>
+            <SplitView
+              title='Sell your home'
+              body='Selling your house is a big deal. You might be moving from your first home or the home your kids grew up in. At Lamb&Co. we understand there is a lot of emotion that goes into it. We will do our best to take as much stress out of it as possible. Utilizing the MLS, Facebook, and Instgram to reach as many people as possible.'
+              link='/contact'
+              linkTitle='Contact Us'
+              img={trees}
+              left
+            />
+          </Padding>
+        </section>
+        <section id='services'>
+          <Padding wide>
+            <ContentList title='All the services you need' />
+          </Padding>
+        </section>
+        <section id='buy'>
+          <Padding>
+            <SplitView
+              title='Buy a home'
+              body='Congratulations! You’re buying a home! Here at Lamb&Co. we share in your excitement and want to help you find the best home for you and your family. You will get notified instantly when a new home with your specifications hit the market.'
+              link='/contact'
+              linkTitle='Contact Us'
+              img={trees}
+            />
+          </Padding>
+        </section>
+      </Container>
     </Layout>
   )
 }

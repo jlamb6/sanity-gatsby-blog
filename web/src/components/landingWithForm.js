@@ -17,7 +17,7 @@ const LandingWithForm = (props) => {
           >
             {title}
           </h1>
-          <div className='fade-in delay' style={{paddingRight: '32px', paddingTop: '12px'}}>
+          <div className='fade-in delay'>
             <h4>{body.contact}</h4>
             <p>{body.first}</p>
             <p>{body.second}</p>

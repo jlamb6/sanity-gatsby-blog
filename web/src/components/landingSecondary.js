@@ -16,13 +16,13 @@ const LandingSecondary = (props) => {
           >
             {title}
           </h1>
-          <div className='fade-in delay' style={{paddingRight: '32px', paddingTop: '12px'}}>
+          <div className='fade-in delay'>
             <p>{body.first}</p>
             <p>{body.second}</p>
             <p>{body.third}</p>
           </div>
         </div>
-        <div style={{position: 'relative'}}>
+        <div className={styles.leftImage}>
           <div
             className='toTopCorner delay full'
             style={{

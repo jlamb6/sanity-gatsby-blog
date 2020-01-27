@@ -1,3 +1,6 @@
+@import '../styles/custom-media.css';
+@import '../styles/custom-properties.css';
+
 .landing {
   background-size: cover;
   background-repeat: no-repeat;
@@ -11,6 +14,7 @@
   @nest & h1 {
     margin-top: 0;
   }
+
 }
 
 .landing__container {
@@ -28,6 +32,13 @@
   display: grid;
   grid-template-columns: 2fr 3fr;
   grid-gap: 20px;
+
+   
+  @media (--media-max-medium) {
+    display: block;
+    text-align: left;
+    padding: 1.5em;
+  }
 }
 
 .landing__grid > div {
@@ -65,6 +76,27 @@ a.no-decoration {
 
   @nest & h4 {
     margin: 0;
+  }
+     
+  @media (--media-max-medium) {
+    background-image: none !important;
+    height: inherit;
+    padding-top: 60px;
+    text-align: left;
+
+    @nest & button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 2em;
+    }
+  }
+}
+
+.leftImage {
+  position: relative;
+   
+  @media (--media-max-medium) {
+    display: none;
   }
 }
 

@@ -1,0 +1,20 @@
+@import '../styles/custom-media.css';
+@import '../styles/custom-properties.css';
+
+.container {
+  display: block;
+  margin: 32px;
+
+  @nest & div {
+    text-align: center;
+    padding: 2em;
+  }
+
+  @media (--media-min-medium) {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+    text-align: center;
+    margin-top: 80px;
+  }
+}
