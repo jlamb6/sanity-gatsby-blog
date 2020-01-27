@@ -18,6 +18,10 @@
       }
     }
   }
+
+  @media (--media-min-small) {
+    padding: 2em;
+  }
 }
 
 .footer__container {
@@ -28,8 +32,10 @@
   max-width: 960px;
   padding: 1em;
 
-  @media (--media-min-small) {
+  @media (--media-max-medium) {
     padding: 1.5em 1.5em;
+    display: block;
+    margin-bottom: 12px;
   }
 }
 
@@ -40,8 +46,13 @@
   padding: 1em;
   display: flex;
 
-  @media (--media-min-small) {
+  @media (--media-max-large) {
     padding: 1.5em 1.5em;
+    display: block;
+
+    @nest & div {
+      margin-bottom: 12px;
+    }
   }
 }
 
@@ -63,6 +74,10 @@
 
 .footer__top {
   margin-bottom: 60px;
+
+  @media (--media-max-large) {
+    margin-bottom: 0;
+  }
 }
 
 .footer__bottom {
@@ -84,6 +99,7 @@
   border-radius: 2px;
   font-size: .825rem;
   background-color: #f6f9fc;
+  padding: 8px;
 }
 
 .newsletter__signup input:focus, .newsletter__signup button:focus {
@@ -100,6 +116,7 @@
   border: none;
   background-color: #4f6a7c;
   color: #fff;    
+  cursor: pointer;
 }
 
 .newsletter__form {

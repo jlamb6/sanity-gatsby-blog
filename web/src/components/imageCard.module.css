@@ -1,0 +1,29 @@
+@import '../styles/custom-media.css';
+@import '../styles/custom-properties.css';
+
+.cardContainer {
+  display: contents;
+  text-decoration: none;
+  color: initial;
+
+  @nest & div {
+    border: 1px solid #e4e4e4;
+    border-radius: 3px;
+    padding: 20px 20px;
+    box-shadow: 0 1px 1px -1px #909090;
+
+    @media (--media-min-small) {
+      margin-bottom: 24px;
+    }
+  }
+
+  @nest & h4 {
+    margin-bottom: 14px;
+  }
+
+  @nest & p {
+    font-size: .8em;
+    line-height: 1.6em; 
+    margin-bottom: 0;
+  }
+}

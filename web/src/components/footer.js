@@ -26,8 +26,10 @@ const Footer = () => (
         <div className={styles.newsletter__form}>
           <h4>Join our Community</h4>
           <div className={styles.newsletter__signup}>
-            <input type='email' placeholder='youremail@site.com' />
-            <button className={styles.button}>Subscribe</button>
+            <form netlify>
+              <input type='email' placeholder='youremail@site.com' />
+              <button className={styles.button}>Subscribe</button>
+            </form>
           </div>
         </div>
       </div>

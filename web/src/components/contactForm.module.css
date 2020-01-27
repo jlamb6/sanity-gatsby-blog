@@ -55,6 +55,11 @@
     background-color: #091540;
     color: #fff;
     font-weight: 600;
+
+    @media (--media-max-medium) {
+      width: 100%;
+      padding: 12px;
+    }
   }
 
   @nest & div {

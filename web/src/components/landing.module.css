@@ -37,12 +37,16 @@
   @media (--media-max-medium) {
     display: block;
     text-align: left;
-    padding: 1.5em;
+    padding: 0;
   }
 }
 
 .landing__grid > div {
   padding: 1.5em;
+  
+  @media (--media-max-medium) {
+    padding: 2em;
+  }
 }
 
 .landing__container h1 {
