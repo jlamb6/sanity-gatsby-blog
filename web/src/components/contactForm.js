@@ -1,10 +1,37 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 
 import {cn} from '../lib/helpers'
 import styles from './contactForm.module.css'
 import './animations.css'
 
+function encode (data) {
+  return Object.keys(data)
+    .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .join('&')
+}
+
 const ContactForm = (props) => {
+  const [state, setState] = useState()
+
+  const handleChange = (e) => {
+    setState({...state, [e.target.name]: e.target.value})
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    const form = e.target
+    fetch('/', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+      body: encode({
+        'form-name': form.getAttribute('name'),
+        ...state
+      })
+    })
+      .then(() => console.log('Form submitted'))
+      .catch((error) => alert(error))
+  }
+
   useEffect(() => {
     Array.from(document.querySelectorAll('.animate')).forEach((cur, index) => {
       let options = {
@@ -39,26 +66,32 @@ const ContactForm = (props) => {
       <div className={styles.contactSmall} id='contact-form'>
         <div className={styles.contactContainer} id='contact'>
           <div className={cn(styles.contact__form, 'animate')}>
-            <form name='contact' method='POST' data-netlify='true'>
+            <form name='contact' method='POST' data-netlify='true' data-netlify-honeypot='bot-field' onSubmit={handleSubmit}>
+              <input type='hidden' name='form-name' value='contact' />
+              <p hidden>
+                <label>
+                  Don’t fill this out: <input name='bot-field' onChange={handleChange} />
+                </label>
+              </p>
               <div className='animate flow' style={{gridArea: 'fname'}}>
                 <label>First Name</label>
-                <input type='text' name='fname' />
+                <input type='text' name='fname' onChange={handleChange} required />
               </div>
               <div className='animate flow' style={{gridArea: 'lname'}}>
                 <label>Last Name</label>
-                <input type='text' name='lname' />
+                <input type='text' name='lname' onChange={handleChange} required />
               </div>
               <div className='animate flow' style={{gridArea: 'email'}}>
                 <label>Email</label>
-                <input type='email' name='email' />
+                <input type='email' name='email' onChange={handleChange} required />
               </div>
               <div className='animate flow' style={{gridArea: 'zipcode'}}>
                 <label>Zipcode</label>
-                <input type='text' name='zipcode' />
+                <input type='text' name='zipcode' onChange={handleChange} required />
               </div>
               <div className='animate flow' style={{gridArea: 'message'}}>
                 <label>Message</label>
-                <textarea name='message' rows='6' />
+                <textarea name='message' rows='6' onChange={handleChange} required />
               </div>
               <button className='animate flow' type='submit' style={{gridArea: 'submit'}}>Submit</button>
             </form>
@@ -68,36 +101,42 @@ const ContactForm = (props) => {
     )
   } else {
     return (
-      <section className={styles.contact} id='contact-form'>
+      <div className={styles.contact} id='contact-form'>
         <div id='contact'>
           <h1 className={cn(styles.contact__header, 'animate')}>Contact us today!</h1>
           <div className={cn(styles.contact__form, 'animate')}>
-            <form name='contact' method='POST' style={{margin: '0'}} data-netlify='true'>
+            <form name='contact' method='POST'data-netlify='true' data-netlify-honeypot='bot-field' onSubmit={handleSubmit}>
+              <input type='hidden' name='form-name' value='contact' />
+              <p hidden>
+                <label>
+                  Don’t fill this out: <input name='bot-field' onChange={handleChange} />
+                </label>
+              </p>
               <div className='animate flow' style={{gridArea: 'fname'}}>
                 <label>First Name</label>
-                <input type='text' name='fname' />
+                <input type='text' name='fname' onChange={handleChange} required />
               </div>
               <div className='animate flow' style={{gridArea: 'lname'}}>
                 <label>Last Name</label>
-                <input type='text' name='lname' />
+                <input type='text' name='lname' onChange={handleChange} required />
               </div>
               <div className='animate flow' style={{gridArea: 'email'}}>
                 <label>Email</label>
-                <input type='email' name='email' />
+                <input type='email' name='email' onChange={handleChange} required />
               </div>
               <div className='animate flow' style={{gridArea: 'zipcode'}}>
                 <label>Zipcode</label>
-                <input type='text' name='zipcode' />
+                <input type='text' name='zipcode' onChange={handleChange} required />
               </div>
               <div className='animate flow' style={{gridArea: 'message', marginBottom: '24px'}}>
                 <label>Message</label>
-                <textarea name='message' rows='6' />
+                <textarea name='message' rows='6' onChange={handleChange} required />
               </div>
               <button type='submit' className='animate flow' style={{gridArea: 'submit'}}>Submit</button>
             </form>
           </div>
         </div>
-      </section>
+      </div>
     )
   }
 }

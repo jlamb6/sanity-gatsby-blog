@@ -7,7 +7,8 @@ const LandingSecondary = (props) => {
   const {image, alt, title, body} = props
 
   return (
-    <section style={{backgroundImage: `url(${props.backgroundImage}`}} className={styles.landing2}>
+    <section className={styles.landing2}>
+      <div className={styles.shape} />
       <div className={styles.landing__grid}>
         <div>
           <h1
