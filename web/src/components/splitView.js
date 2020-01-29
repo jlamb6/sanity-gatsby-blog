@@ -12,7 +12,7 @@ const SplitView = props => {
           <h1>{props.title}</h1>
         </div>
         <div className={styles.split__body}>
-          <p>{props.body}</p>
+          <div>{props.body}</div>
           <Link to={props.link} className={cn(styles.button, styles.link)}>{props.linkTitle}</Link>
         </div>
         <div className={cn(styles.split__image, styles.right)}>

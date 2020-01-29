@@ -33,8 +33,14 @@ const Services = () => {
         <div id='sell'>
           <Padding>
             <SplitView
-              title='Sell your home'
-              body='Selling your house is a big deal. You might be moving from your first home or the home your kids grew up in. At Lamb&Co. we understand there is a lot of emotion that goes into it. We will do our best to take as much stress out of it as possible. Utilizing the MLS, Facebook, and Instgram to reach as many people as possible.'
+              title='Sell Your Home'
+              body={
+                <>
+                  <p>Selling your house is a big deal. You might be moving from your first home or the home your kids grew up in.</p>
+                  <p>We understand there is a lot of emotion that goes into it. We will do our best to take as much stress out of it as possible.</p>
+                  <p>Utilizing the MLS, Facebook, and Instgram to reach as many people as possible.</p>
+                </>
+              }
               link='/contact'
               linkTitle='Contact Us'
               img={trees}
@@ -50,7 +56,7 @@ const Services = () => {
         <div id='buy'>
           <Padding>
             <SplitView
-              title='Buy a home'
+              title='Buy a Home'
               body='Congratulations! You’re buying a home! Here at Lamb&Co. we share in your excitement and want to help you find the best home for you and your family. You will get notified instantly when a new home with your specifications hit the market.'
               link='/contact'
               linkTitle='Contact Us'

@@ -116,14 +116,14 @@ const IndexPage = props => {
       <Container>
         <Padding>
           <SplitView
-            title='More choice, less cost'
-            body='Here at Wyvern Real Estate Group we strive
-                to offer you a Real Estate experience like no
-                other.
-                Our unique approach  to handling payment
-                and service allows you to get what you want
-                without paying us a traditional commission,
-                and therefore saving you money!'
+            title='Our Mission'
+            body={
+              <>
+                <p>We are here to help you live where you love. As we get to know what’s important to you, what you want in a home, and more your experience with us will feel tailor made for you. You are the center of our company.</p>
+                <p>We can’t wait to start working with you and help you grow in your life.</p>
+                <p>Welcome to the Lamb&Co family!'</p>
+              </>
+            }
             link='/services'
             linkTitle='View our services'
             img={trees}
@@ -140,7 +140,7 @@ const IndexPage = props => {
                 lineHeight: '1.4em'
               }}
             >
-              Let's get started
+              Let's Get Started
             </h1>
             <GridContainer>
               <IconBox

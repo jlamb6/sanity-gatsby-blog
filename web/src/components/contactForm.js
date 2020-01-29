@@ -66,7 +66,7 @@ const ContactForm = (props) => {
       <div className={styles.contactSmall} id='contact-form'>
         <div className={styles.contactContainer} id='contact'>
           <div className={cn(styles.contact__form, 'animate')}>
-            <form name='contact' method='POST' data-netlify='true' data-netlify-honeypot='bot-field' onSubmit={handleSubmit}>
+            <form name='contact' method='POST' data-netlify='true' data-netlify-honeypot='bot-field' onSubmit={handleSubmit}>    
               <input type='hidden' name='form-name' value='contact' />
               <p hidden>
                 <label>
@@ -103,7 +103,7 @@ const ContactForm = (props) => {
     return (
       <div className={styles.contact} id='contact-form'>
         <div id='contact'>
-          <h1 className={cn(styles.contact__header, 'animate')}>Contact us today!</h1>
+          <h1 className={cn(styles.contact__header, 'animate')}>Contact Us Today!</h1>
           <div className={cn(styles.contact__form, 'animate')}>
             <form name='contact' method='POST'data-netlify='true' data-netlify-honeypot='bot-field' onSubmit={handleSubmit}>
               <input type='hidden' name='form-name' value='contact' />

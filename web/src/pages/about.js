@@ -29,11 +29,14 @@ const About = () => {
       <Container>
         <Padding>
           <SplitView
-            title='The value of a home'
-            body='We beleive that a house becomes a home when it is filled with Love and Family.
-                  It is a place a safety and acceptance.
-                  At Lamb&Co, we want to know what home means to you and help you find it.
-                  Learn more about the ways we can help you start your new home.'
+            title='The Value of a Home'
+            body={
+              <>
+                <p>We beleive that a house becomes a home when it is filled with Love and Family. It is a place a safety and acceptance.</p>
+                <p>At Lamb&Co, we want to know what home means to you and help you find it</p>
+                <p> Learn more about the ways we can help you start your new home.'</p>
+              </>
+            }
             img={welcome}
             alt='Welcome sign hanging on a door'
             link='/services/'
@@ -43,7 +46,7 @@ const About = () => {
         </Padding>
         <Padding>
           <SplitView
-            title='Get in touch'
+            title='Get in Touch'
             body='We want to be there for all of your realty needs. Whether you are buying or selling a home, we can help you get the most out of this experience.'
             img={palmTrees}
             alt='Palm trees'

@@ -8,6 +8,12 @@
   padding-right: 15px;
   margin: 0 auto;
   box-sizing: border-box;
+
+  @media (--media-max-small) {
+    box-sizing: initial;
+    padding-left: 0;
+  }
+
 }
 
 .contactSmall {
@@ -34,6 +40,13 @@
   padding: 42px 32px 32px;
   box-shadow: 0 10px 20px rgba(91,107,174,.15); /*0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);*/
 
+  @media (--media-max-medium) {
+    box-shadow: none;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+  }
+  
   @nest & form {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -42,8 +55,9 @@
                          "email zipcode"
                          "message message"
                          "submit submit";
-    grid-gap: 24px;
-    
+                         grid-gap: 24px;
+                         
+
     @media (--media-max-medium) {
       display: block;
     }

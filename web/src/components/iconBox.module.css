@@ -13,7 +13,7 @@
 
   @media (--media-max-medium) {
     margin-bottom: 24px;
-    box-shadow: 0 10px 20px rgba(91,107,174,.15);
+    box-shadow: 0 4px 8px rgba(91,107,174,.15);
     
     @media (hover: hover) {
       transition: none;
