@@ -7,6 +7,7 @@
   margin-top: 80px;
   padding: 60px 0 0;
   background-color: #141b29;
+  cursor: pointer;
 
   @nest & a {
     color: inherit;
@@ -20,7 +21,7 @@
   }
 
   @media (--media-min-small) {
-    padding: 2em;
+    padding: 1.5em 0;
   }
 }
 
@@ -36,6 +37,10 @@
     padding: 1.5em 1.5em;
     display: block;
     margin-bottom: 12px;
+  }
+
+  @media (--media-max-small) {
+    margin-bottom: 0;
   }
 }
 
@@ -100,6 +105,10 @@
   font-size: .825rem;
   background-color: #f6f9fc;
   padding: 8px;
+  
+  @media (--media-max-small) {
+    padding: 12px;
+  }
 }
 
 .newsletter__signup input:focus, .newsletter__signup button:focus {

@@ -48,11 +48,13 @@ const Services = () => {
             />
           </Padding>
         </div>
-        <div id='services'>
-          <Padding wide>
-            <ContentList title='All the services you need' />
-          </Padding>
-        </div>
+      </Container>
+      <div id='services'>
+        <Padding wide>
+          <ContentList title='All the services you need' />
+        </Padding>
+      </div>
+      <Container>
         <div id='buy'>
           <Padding>
             <SplitView

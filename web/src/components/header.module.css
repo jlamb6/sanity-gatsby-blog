@@ -40,6 +40,10 @@
       }
     }
   }
+
+  @media (--media-max-small) {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  }
 }
 
 .wrapper {
@@ -139,7 +143,7 @@
     top: 4.3rem;
 
     @nest & ul {
-      padding: 1rem 0;
+      padding: 0;
     }
 
     @nest & li {
@@ -148,7 +152,7 @@
     }
 
     @nest & ul li a {
-      padding: 0.5rem 1.5rem;
+      padding: 1rem 1.5rem;
     }
   }
 

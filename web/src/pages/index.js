@@ -129,44 +129,46 @@ const IndexPage = props => {
             img={trees}
           />
         </Padding>
-        <section>
-          <Padding>
-            <h1
-              className='content__header'
-              style={{
-                fontWeight: '700',
-                fontSize: '2rem',
-                textAlign: 'center',
-                lineHeight: '1.4em'
-              }}
-            >
-              Let's Get Started
-            </h1>
-            <GridContainer>
-              <IconBox
-                icon={moneyIcon}
-                title='Money Icon'
-                subTitle='Sell Your Home'
-                body='We provide all the services you need to sell your home for top dollar'
-                link='/services#sell'
-              />
-              <IconBox
-                icon={homeIcon}
-                title='Home Icon'
-                subTitle='Buy a Home'
-                body='Find the perfect home for the next step in your life'
-                link='/services#buy'
-              />
-              <IconBox
-                icon={financeIcon}
-                title='Finance Icon'
-                subTitle='Market Analysis'
-                body='Find out what your home is worth so you dont leave money on the table'
-                link='/services#analysis'
-              />
-            </GridContainer>
-          </Padding>
-        </section>
+      </Container>
+      <section>
+        <Padding wide>
+          <h1
+            className='content__header'
+            style={{
+              fontWeight: '700',
+              fontSize: '2rem',
+              textAlign: 'center',
+              lineHeight: '1.4em'
+            }}
+          >
+            Let's Get Started
+          </h1>
+          <GridContainer>
+            <IconBox
+              icon={moneyIcon}
+              title='Money Icon'
+              subTitle='Sell Your Home'
+              body='We provide all the services you need to sell your home for top dollar'
+              link='/services#sell'
+            />
+            <IconBox
+              icon={homeIcon}
+              title='Home Icon'
+              subTitle='Buy a Home'
+              body='Find the perfect home for the next step in your life'
+              link='/services#buy'
+            />
+            <IconBox
+              icon={financeIcon}
+              title='Finance Icon'
+              subTitle='Market Analysis'
+              body='Find out what your home is worth so you dont leave money on the table'
+              link='/services#analysis'
+            />
+          </GridContainer>
+        </Padding>
+      </section>
+      <Container>
         <Padding>
           <ContactForm />
         </Padding>
