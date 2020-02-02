@@ -16,7 +16,7 @@ import IconBox from '../components/iconBox'
 import GridContainer from '../components/gridContainer'
 import ContactForm from '../components/contactForm'
 import BackgroundOne from '../components/images/landing-one.png'
-import trees from '../components/images/palm-trees.jpg'
+import mission from '../components/images/mission.jpg'
 import financeIcon from '../components/svgIcons/finance.svg'
 import homeIcon from '../components/svgIcons/real-estate.svg'
 import moneyIcon from '../components/svgIcons/money.svg'
@@ -121,12 +121,12 @@ const IndexPage = props => {
               <>
                 <p>We are here to help you live where you love. As we get to know what’s important to you, what you want in a home, and more your experience with us will feel tailor made for you. You are the center of our company.</p>
                 <p>We can’t wait to start working with you and help you grow in your life.</p>
-                <p>Welcome to the Lamb&Co family!'</p>
+                <p>Welcome to the Lamb&Co family!</p>
               </>
             }
             link='/services'
             linkTitle='View our services'
-            img={trees}
+            img={mission}
           />
         </Padding>
       </Container>

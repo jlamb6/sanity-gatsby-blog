@@ -24,7 +24,7 @@ const LandingSecondary = (props) => {
           </div>
         </div>
         <div className={styles.leftImage}>
-          <div
+          {/* <div
             className='toTopCorner delay full'
             style={{
               display: 'block',
@@ -37,21 +37,22 @@ const LandingSecondary = (props) => {
               opacity: '0',
               border: '1px solid black'
             }}
-          />
+          /> */}
           <img
             src={image}
             className='fade'
             alt={alt || 'site image'}
             style={{
               zIndex: '100',
-              width: '80%',
+              width: '100%',
+              // width: '80%',
               position: 'relative',
-              margin: '60px auto',
+              // margin: '60px auto',
               display: 'block',
               boxShadow: '0 10px 20px rgba(91,107,174,.15)'
             }}
           />
-          <div
+          {/* <div
             className='toBottomCorner delay full'
             style={{
               display: 'block',
@@ -64,7 +65,7 @@ const LandingSecondary = (props) => {
               opacity: '0',
               border: '1px solid black'
             }}
-          />
+          /> */}
         </div>
       </div>
     </section>

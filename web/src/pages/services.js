@@ -7,9 +7,10 @@ import Container from '../components/container'
 import SplitView from '../components/splitView'
 import ContentList from '../components/contentList'
 import Padding from '../components/padding'
-import trees from '../components/images/palm-trees.jpg'
+import sellHome from '../components/images/sell-home.jpg'
+import buyHome from '../components/images/buy-home.jpg'
 import BlueTriangle from '../components/images/blue-triangle.png'
-import bg from '../components/images/kalie.jpg'
+import bg from '../components/images/desk.jpg'
 
 const Services = () => {
   const l1 = 'Here at Lamb&Co, we tailor our services to make your real estate experience as beneficial as possible.'
@@ -43,7 +44,7 @@ const Services = () => {
               }
               link='/contact'
               linkTitle='Contact Us'
-              img={trees}
+              img={sellHome}
               left
             />
           </Padding>
@@ -62,7 +63,7 @@ const Services = () => {
               body='Congratulations! You’re buying a home! Here at Lamb&Co. we share in your excitement and want to help you find the best home for you and your family. You will get notified instantly when a new home with your specifications hit the market.'
               link='/contact'
               linkTitle='Contact Us'
-              img={trees}
+              img={buyHome}
             />
           </Padding>
         </div>

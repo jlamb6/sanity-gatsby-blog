@@ -35,7 +35,7 @@
     @nest & h1 {
       padding: 0 24px;
       line-height: initial;
-      font-size: 3.6em;
+      font-size: 4em;
     }
 
     @nest & a {
@@ -103,7 +103,7 @@ a.no-decoration {
 
 @keyframes pivot {
   0% {
-    clip-path: polygon(0% 100%, 0% 100%, 60% 60%);
+    clip-path: polygon(100% 100%, 100% 100%, 100% 100%);
   }
   100% {
     clip-path: polygon(100% 0%, 0% 100%, 100% 100%);
@@ -118,7 +118,8 @@ a.no-decoration {
   padding-top: 20vh;  
 
   @nest & h1 {
-    font-size: 2em;
+    font-size: 4em;
+    margin: 0.5em 0;
   }
 
   @nest & h4 {
@@ -163,6 +164,7 @@ a.no-decoration {
   letter-spacing: .08em;
   transition: .2s;
   color: #fff;
+  text-transform: uppercase;
 }
 
 .buttonOutline:hover {
@@ -180,6 +182,7 @@ a.no-decoration {
   transition: .2s;
   background-color: #4F6A7C;
   color: #fff;
+  text-transform: uppercase;
 }
 
 .button:hover {
