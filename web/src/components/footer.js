@@ -47,9 +47,8 @@ const Footer = () => {
           </div>
           <div className={styles.footer__links}>
             <h4>Social Media</h4>
-            <Link to='/'>Facebook</Link>
-            <Link to='/'>Instagram</Link>
-            <Link to='/'>LinkedIn</Link>
+            <a href='https://www.instagram.com/kalielambrealty/' target='_blank'>Instagram</a>
+            <a href='https://www.linkedin.com/in/kalie-lamb-1293a7133/' target='_blank'>LinkedIn</a>
           </div>
           <div className={styles.newsletter__form}>
             <h4>Join our Community</h4>
