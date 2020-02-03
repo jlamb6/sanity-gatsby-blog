@@ -7,7 +7,7 @@ import BlueTriangle from '../components/images/blue-triangle.png'
 
 const Contact = () => {
   const l1 = 'Group Director'
-  const l2 = '(480)—438—2002'
+  const l2 = '(480)-438-2002'
   const l3 = 'lambandcorealty@gmail.com'
 
   return (

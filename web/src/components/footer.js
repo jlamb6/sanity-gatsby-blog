@@ -10,6 +10,7 @@ function encode (data) {
 
 const Footer = () => {
   const [state, setState] = useState()
+  const [isComplete, setComplete] = useState(false)
 
   const handleChange = (e) => {
     setState({...state, [e.target.name]: e.target.value})
@@ -26,7 +27,7 @@ const Footer = () => {
         ...state
       })
     })
-      .then(() => console.log('Form submitted'))
+      .then(() => setComplete(true))
       .catch((error) => alert(error))
   }
 
@@ -60,8 +61,10 @@ const Footer = () => {
                     Don’t fill this out: <input name='bot-field' onChange={handleChange} />
                   </label>
                 </p>
-                <input type='email' placeholder='youremail@site.com' onChange={handleChange} />
-                <button type='submit' className={styles.button}>Subscribe</button>
+                {(isComplete)
+                  ? <input type='email' placeholder='youremail@site.com' onChange={handleChange} disabled />
+                  : <input type='email' placeholder='youremail@site.com' onChange={handleChange} /> }
+                <button type='submit' className={styles.button}>{(isComplete) ? 'Thank You!' : 'Submit'}</button>
               </form>
             </div>
           </div>
