@@ -10,14 +10,14 @@ const Landing = props => {
         <div>
           <h1
             className='fade-in'
-            style={{fontWeight: '400', color: 'white'}}
+            style={{fontWeight: '400'}}
           >
             {props.title}
           </h1>
-        </div>
-        <div className='fade-in delay'>
-          <Link className={styles.buttonOutline} style={{marginRight: '12px'}} to={props.buttonLinkOne}>{props.buttonTitleOne}</Link>
-          <Link className={styles.button} to={props.buttonLinkTwo}>{props.buttonTitleTwo}</Link>
+          <div className='fade-in delay'>
+            <Link className={styles.buttonOutline} style={{marginRight: '12px'}} to={props.buttonLinkOne}>{props.buttonTitleOne}</Link>
+            <Link className={styles.button} to={props.buttonLinkTwo}>{props.buttonTitleTwo}</Link>
+          </div>
         </div>
       </div>
     </section>
