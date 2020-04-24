@@ -5,7 +5,7 @@
   color: #fff;
   font-size: .875em;
   margin-top: 80px;
-  padding: 60px 0 0;
+  padding: 60px 3em 0;
   background-color: #141b29;
   cursor: pointer;
 
@@ -15,26 +15,25 @@
 
     @media (hover: hover) {
       @nest &:hover {
-        color: var(--color-accent);
+        color: var(--brand-orange);
       }
     }
   }
 
   @media (--media-min-small) {
-    padding: 1.5em 0;
+    padding: 1.5em 3em;
   }
 }
 
 .footer__container {
+  max-width: var(--max-width);
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
-  max-width: 960px;
-  padding: 1em;
 
   @media (--media-max-medium) {
-    padding: 1.5em 1.5em;
+    padding: 1.5em 3em;
     display: block;
     margin-bottom: 12px;
   }
@@ -47,12 +46,12 @@
 .wrapper {
   box-sizing: border-box;
   margin: 0 auto;
-  max-width: 960px;
+  max-width: var(--max-width);
   padding: 1em;
   display: flex;
 
   @media (--media-max-large) {
-    padding: 1.5em 1.5em;
+    padding: 1.5em 3em;
     display: block;
 
     @nest & div {

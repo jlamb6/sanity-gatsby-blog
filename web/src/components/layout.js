@@ -1,16 +1,28 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Header from './header'
 import Footer from './footer'
 
 import styles from './layout.module.css'
 import '../styles/layout.css'
+import Helmet from 'react-helmet'
+import favicon from '../components/icon/Lamb&Co_60.png'
 
-const Layout = ({children, onHideNav, onShowNav, showNav, siteTitle, ...props}) => (
-  <>
-    <Header siteTitle={siteTitle} onHideNav={onHideNav} onShowNav={onShowNav} showNav={showNav} color={props.color} />
-    <div className={styles.content}>{children}</div>
-    <Footer />
-  </>
-)
+const Layout = ({children, siteTitle, ...props}) => {
+  const [isNavOpen, setNavOpen] = useState(false)
+  return (
+    <>
+      <Helmet>
+        <link rel='icon' href={favicon} />
+        <link rel='stylesheet' href='https://unpkg.com/pattern.css' />
+      </Helmet>
+      <Header siteTitle={siteTitle} color={props.color} blur={setNavOpen} />
+      <div
+        className={styles.content}
+        style={isNavOpen ? {filter: 'brightness(0.5)'} : {transitionDelay: '800ms'}}
+      >{children}</div>
+      <Footer />
+    </>
+  )
+}
 
 export default Layout

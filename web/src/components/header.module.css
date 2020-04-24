@@ -3,93 +3,75 @@
 
 .root {
   width: 100%;
-  position: absolute;
+  position: fixed;
+  top: 0;
+  border-bottom: 1px solid #d3d3d396;
+  /* box-shadow: 0 6px 12px rgba(0,2,12,.12); */
+  background-color: rgba(255,255,255,.98);
   z-index: 100;
-
-  @media (--media-max-medium) {
-    background-color: var(--brand-dark-blue);
-    color: #fff;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.25);
-  }
-}
-
-.white {
-  color: white;
-
-  @nest & div nav ul li a {
-    display: inline-block;
-    color: inherit; 
-    text-decoration: none;
-  }
-
-  @nest & ul li {
-    margin-left: 2em;
-  }
-
-  @nest & a {
-    display: inline-block;
-    color: inherit;
-    text-decoration: none;
-
-    @media (hover: hover) {
-      @nest &:hover {
-        color: white !important;
-      }
-      @nest &::after {
-        background-color: white !important;
-      }
-    }
-  }
-
-  @media (--media-max-small) {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
-  }
 }
 
 .wrapper {
+  max-width: var(--max-width);
   box-sizing: border-box;
   margin: 0 auto;
-  max-width: 960px;
-  padding: 1em;
+  padding: 1em 3em;
   display: flex;
   align-items: center;
+  min-height: 80px;
+  transition: background-color 200ms;
 
-  @media (--media-min-medium) {
-    padding: 1.5em 1.5em;
+  @media (min-width: 1440px) {
+    padding: 1em 4em;
   }
 
-  @media (--media-max-medium) {
-    padding: 1em 24px;
+  @media (min-width: 1530px) {
+    padding: 1em 5em;
+  }
+
+  @media (min-width: 1900px) {
+    padding: 2em 5em;
+  }
+
+  @nest & img {
+    cursor: pointer;
   }
 }
 
 .branding {
   font-weight: 600;
   flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
   @nest & a {
     color: inherit;
     text-decoration: none;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+
+    & h4 {
+      margin: 0 0 0 1.2em;
+      font-size: 1.5em;
+      display: inline-block;
+      line-height: 1em;
+    }
+    
+    @media (min-width: 1900px) {
+      font-size: 1.5em;
+    }
+    
+    @media (max-width: 1180px) {
+      font-size: 16px;
+    }
+    
   }
-}
 
-.toggleNavButton {
-  appearance: none;
-  font-size: 25px;
-  border: none;
-  background: none;
-  margin: 0;
-  padding: calc(14 / 17 / 2 * 1rem);
-  outline: none;
-  color: inherit;
-
-  & svg {
-    display: block;
-    fill: inherit;
-  }
-
-  @media (--media-min-small) {
-    display: none;
+  @nest & img {
+    padding: 0 4px;
+    cursor: pointer;
   }
 }
 
@@ -116,17 +98,13 @@
     width: 0;
     margin: 0 auto;
     height: 2px;
-    background-color: var(--brand-blue);
+    background-color: var(--brand-orange);
     opacity: 0;
     content: "";
-    transition: .2s;
+    transition: 0.2s;
   }
 
   @media (hover: hover) {
-    @nest & ul li a:hover {
-      color: var(--brand-blue);
-    }
-
     @nest & ul li a:hover::after {
       opacity: 1;
       width: 100%;
@@ -135,9 +113,6 @@
 
   @media (--media-max-small) {
     position: absolute;
-    background: var(--color-white);
-    color: var(--color-black);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
     left: 0;
     right: 0;
     top: 4.3rem;
@@ -156,7 +131,7 @@
     }
   }
 
-  @media (--media-min-small) {
+  @media (min-width: 761px) {
     display: block;
 
     @nest & ul {
@@ -171,6 +146,82 @@
   }
 }
 
-.showNav {
-  display: block;
+.menuCollapse.menuClosed {
+  display: none;
+
+  @nest & div.background {
+    transition: 0.4s;
+    transform: scale(0);
+  }
+}
+
+.menuCollapse {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 420px;
+  height: 100%;
+  overflow: hidden;
+  color: black;
+
+  @nest & ul {
+    position: absolute;
+    width: 100%;
+    top: 140px;
+    right: 0px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 2em;
+
+    @nest & li:hover {
+      width: 100%;
+      clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+      background: var(--color-very-light-gray);
+    }
+
+    @nest & li {
+      position: relative;
+      cursor: pointer;
+      width: 100%;
+      box-sizing: border-box;
+      background: transparent;
+      
+      @nest & a {
+        color: inherit;
+        width: 100%;
+        text-align: right;
+        text-decoration: none;
+        transition-duration: 250ms;
+        padding: 1em 2em;
+        font-size: 0.725em;
+        box-sizing: border-box;
+        display: block;
+      }
+    }
+  }
+}
+
+.menuClose {
+  position: absolute;
+  top: 2em;
+  right: 4em;
+  width: 48px;
+  background: white;
+  border: none;
+  z-index: 100;
+
+  &:focus {
+    outline: none
+  }
+}
+
+.circleBackground {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: inherit;
+  background: white;
+  overflow: hidden;
 }

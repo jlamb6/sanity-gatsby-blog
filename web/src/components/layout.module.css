@@ -4,6 +4,7 @@
 .content {
   background: var(--color-white);
   min-height: calc(100% - 73px - 120px);
+  transition: filter 200ms ease-in-out;
 
   @media (--media-min-small) {
     min-height: calc(100% - 91px - 155px);

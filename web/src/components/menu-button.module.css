@@ -1,0 +1,19 @@
+.root {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  outline: none;
+  border: none;
+  user-select: none;
+  cursor: pointer;
+  top: 18px;
+  right: 3em;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px solid #d3d3d396;
+  /* box-shadow: 0 4px 8px rgba(0,2,12,.18); */
+  z-index: 110
+}

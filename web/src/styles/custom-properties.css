@@ -3,6 +3,7 @@
 
   --brand-blue: #4F6A7C;
   --brand-dark-blue: #141b29;
+  --brand-orange: #de6357;
 
   --color-black: #202123;
   --color-dark-gray: #32373e;
@@ -29,4 +30,6 @@
   --font-title2-line-height: calc(33 / 24); /* 33px */
   --font-title1-size: calc(49 / var(--unit) * 1rem); /* 49px */
   --font-title1-line-height: calc(57 / 49); /* 57px */
+
+  --max-width: 1440px;
 }

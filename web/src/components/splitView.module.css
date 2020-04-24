@@ -30,7 +30,7 @@
 .split__image.left > img {
   width: 100%;
   /*transform: matrix3d(.5,.0321,0,.0009,.02,.7,0,.0001,1,0,1,0,-20,20,0,.825);*/
-  box-shadow: 0 10px 20px rgba(91,107,174,.15);
+  box-shadow: 0 8px 16px rgba(0,2,12,.12);
   
   @media (--media-max-medium) {
     display: none;
@@ -40,7 +40,7 @@
 .split__image.right > img {
   width: 100%;
   /*transform: matrix3d(.8,-.0321,0,-.0002,-.02,.8,0,-.0001,0,0,1,0,-10,0,0,1);*/
-  box-shadow: 0 10px 20px rgba(91,107,174,.15);
+  box-shadow: 0 8px 16px rgba(0,2,12,.12);
   
   @media (--media-max-medium) {
     display: none;

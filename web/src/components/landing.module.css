@@ -2,25 +2,132 @@
 @import '../styles/custom-properties.css';
 
 .landing {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  /*clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 50% 100%);*/
+
+  @media (min-width: 997px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 80px;
+  }
+
+  @media (max-width: 996px) {
+    display: block;
+
+    @nest & .titleContainer {
+      position: absolute;
+      z-index: 10;
+      color: white;
+      margin: 10% 3em;
+
+      @media (min-width: 320px) {
+        margin: 10% 0;
+      }
+
+      @media (min-width: 675px) {
+        margin: 6em 3em;
+      }
+    }
+  }
 
   @nest & h1 {
-    margin-top: 0;
+    margin: 20% 0 0;
+    font-size: 4em;
+    line-height: 1.2em;
+    font-weight: 600;
+
+    @media (min-width: 320px) {
+      font-size: 3em;
+    }
+
+    @media (min-width: 675px) {
+      font-size: 4em; 
+    }
+
+    @media (min-width: 997px) {
+      font-size: 3.2em;
+    }
+
+    @media (min-width: 1180px) {
+      font-size: 4em;
+    }
+
+    @media (min-width: 1440px) {
+      margin: 3em 0 0;
+    }
+    
+    @media (min-width: 1900px) {
+      font-size: 6em;
+    }
   }
 
-  @media (--media-max-medium) {
-    height: auto;
-    padding-top: 120px;
+  @nest & .titleContainer {
+    display: block;
+
+    @media (--media-max-medium) {
+      @nest & p {
+        visibility: hidden;
+      }
+    }
+
+    @media (min-width: 997px) {
+      display: grid;
+      grid-template-rows: 1fr auto;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    @nest & div {
+      padding: 0 3em;
+
+      @media (min-width: 1440px) {
+        padding: 0 4em;
+      }
+      
+      @media (min-width: 1530px) {
+        padding: 0 5em;
+      }
+    }
+
+    @nest & p {
+      font-size: 0.875em;
+
+      @media (max-width: 674px) {
+        margin: 0 !important;
+      }
+
+      @media (min-width: 675px) {
+        margin-bottom: 2em;
+        margin-top: 1em;
+      }
+
+      @media (min-width: 1900px) {
+        font-size: 1.5em;
+      }
+    }
+  }
+}
+
+.colorContainer {
+  background: linear-gradient(160deg, #0d2c54, #2374c7);
+  color: white;
+  padding: 1.4em 3em !important;
+  display: none;
+
+  @media (min-width: 997px) {
+    display: block;
+    padding: 0em 3em !important;
   }
 
+  @media (min-width: 1180px) {
+    padding: 1.4em 3em !important;
+  }
+
+  @media (min-width: 1440px) {
+    padding: 1.4em 4em !important;
+  }
+  
+  @media (min-width: 1530px) {
+    padding: 1.4em 5em !important;
+  }
 }
 
 .landing__container {
@@ -29,7 +136,6 @@
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
   grid-gap: 60px;
-
 
   @media (--media-max-large) {
     
@@ -45,15 +151,18 @@
   }
 }
 
-.landing__grid {
-  max-width: 960px;
+.landingGrid {
+  max-width: var(--max-width);
   width: 100%;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 2fr 3fr;
-  grid-gap: 20px;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 60px;
 
-   
+  @media (max-width: 997px) {
+    grid-gap: 24px;
+  }
+
   @media (--media-max-medium) {
     display: block;
     text-align: left;
@@ -61,11 +170,11 @@
   }
 }
 
-.landing__grid > div {
-  padding: 1.5em;
+.landingGrid > div {
+  margin: 3em;
   
   @media (--media-max-medium) {
-    padding: 2em;
+    margin: 2em;
   }
 }
 
@@ -90,12 +199,14 @@ a.no-decoration {
     display: none;
   }
 
+  @media (min-width: 1900px) {
+    display: none;
+  }
+
   position: absolute;
   height: 100%;
   width: 100%;
   background: linear-gradient(180deg, #4F6A7C, transparent);
-  /*clip-path: polygon(0% 80%, 0% 100%, 100% 100%);*/
-
   animation-name: pivot;
   animation-duration: 0.8s;
   animation-timing-function: ease-in-out;
@@ -112,6 +223,7 @@ a.no-decoration {
 }
 
 .landing2 {
+  position: relative;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -120,7 +232,7 @@ a.no-decoration {
 
   @nest & h1 {
     font-size: 4em;
-    margin: 0.5em 0;
+    margin: 0;
   }
 
   @nest & h4 {
@@ -143,6 +255,15 @@ a.no-decoration {
 
 .leftImage {
   position: relative;
+  box-sizing: border-box;
+
+  @media (max-width: 997px) {
+    @nest & img {
+      left: 0 !important;
+      top: 0 !important;
+      margin-left: 0;
+    }
+  }
    
   @media (--media-max-medium) {
     display: none;
@@ -189,4 +310,29 @@ a.no-decoration {
 .button:hover {
   background-color: #091540;
   border-color: #091540;
+}
+
+.buttonSecondary {
+  display: inline-block;
+  text-decoration: none;
+  border: 2px solid;
+  padding: 12px 32px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  transition: .2s;
+  color: #fff;
+  text-transform: uppercase;
+  background-color: var(--brand-orange);
+  border-color: var(--brand-orange);
+}
+
+.buttonSecondary:hover {
+  background-color: #a83f35;
+  border-color: #a83f35;
+}
+
+.secondDiv {
+  @media (max-width: 997px) {
+    margin-left: 0 !important;
+  }
 }

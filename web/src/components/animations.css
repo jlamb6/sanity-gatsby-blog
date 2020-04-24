@@ -24,9 +24,9 @@
 
 .fade {
   opacity: 0;
-  transform: scale(.85,.85);
+  transform: scale(.92,.92);
   animation-name: fade;
-  animation-duration: .6s;
+  animation-duration: 0.4s;
   animation-timing-function: cubic-bezier(0.54, 0.31, 0.58, 0.82);
   animation-fill-mode: forwards;
 }
@@ -41,11 +41,11 @@
 }
 
 .delay {
-  animation-delay: .4s;
+  animation-delay: 1.2s;
 }
 
-.delay.full {
-  animation-delay: .6s;
+.delay-long {
+  animation-delay: 1.6s;
 }
 
 .toTopCorner {
@@ -70,6 +70,26 @@
   animation-duration: .4s;
   animation-timing-function: cubic-bezier(0.54, 0.31, 0.58, 0.82);
   animation-fill-mode: forwards;
+}
+
+.adjust {
+  left: 0 !important;
+  top: 0 !important;
+  animation-name: adjust;
+  animation-duration: 300ms;
+  animation-fill-mode: forwards;
+  animation-delay: 1.525s;
+}
+
+@keyframes adjust {
+  0% {
+    left: 0;
+    top: 0;
+  }
+  100% {
+    left: -3em;
+    top: -3em;
+  }
 }
 
 @keyframes flow-up {
@@ -102,7 +122,7 @@
 @keyframes fade {
   0% {
       opacity: 0;
-      transform: scale(.85,.85);
+      transform: scale(.92,.92);
   }
   100% {
       opacity: 1;

@@ -35,14 +35,15 @@ const Footer = () => {
     <footer className={styles.footer}>
       <div className={styles.footer__top}>
         <div className={styles.wrapper}>
-          <div style={{marginRight: '120px'}}>
-            <h2 style={{fontSize: '1rem'}}>Lamb&Co Realty</h2>
+          <div style={{marginRight: '120px', whiteSpace: 'nowrap'}}>
+            <h2 style={{fontSize: '1rem'}}>Lamb&Co<br />Realty Group</h2>
           </div>
           <div className={styles.footer__links}>
             <h4>Navigation</h4>
             <Link to='/'>Home</Link>
-            <Link to='/about/'>About</Link>
+            <a href='https://kalielamb.exprealty.com/index.php' target='_blank'>Listings</a>
             <Link to='/services/'>Services</Link>
+            <Link to='/about/'>About</Link>
             <Link to='/blog/'>Blog</Link>
             <Link to='/contact/'>Contact</Link>
           </div>
@@ -72,8 +73,8 @@ const Footer = () => {
       </div>
       <div className={styles.footer__bottom}>
         <div className={styles.footer__container}>
-          <p>Licensed at Brough Realty</p>
-          <p>copyright 2019 - Designed by Jake Lamb</p>
+          <p>Licensed at EXP Realty</p>
+          <p>copyright 2020 - Designed by Jake Lamb</p>
         </div>
       </div>
     </footer>

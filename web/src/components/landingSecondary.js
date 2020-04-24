@@ -1,71 +1,58 @@
 import React from 'react'
-
 import styles from './landing.module.css'
+import {motion} from 'framer-motion'
 import './animations.css'
 
 const LandingSecondary = (props) => {
   const {image, alt, title, body} = props
-
   return (
     <section className={styles.landing2}>
       <div className={styles.shape} />
-      <div className={styles.landing__grid}>
+      <div className={styles.landingGrid}>
         <div>
-          <h1
-            className='fade-in'
+          <motion.h1
+            animate={{
+              x: 0,
+              opacity: 1,
+              transition: {
+                type: 'spring',
+                duration: 1.2,
+                delay: 0.12
+              }}
+            }
+            initial={{x: -40, opacity: 0}}
             style={{fontWeight: '600', color: 'black'}}
           >
             {title}
-          </h1>
-          <div className='fade-in delay'>
-            <p>{body.first}</p>
-            <p>{body.second}</p>
-            <p>{body.third}</p>
+          </motion.h1>
+          <div>
+            <motion.p
+              initial={{x: -40, opacity: 0}}
+              animate={{x: 0, opacity: 1, transition: {delay: 0.4, type: 'spring'}}}
+            >{body.first}</motion.p>
+            <motion.p
+              initial={{x: -40, opacity: 0}}
+              animate={{x: 0, opacity: 1, transition: {delay: 0.52, type: 'spring'}}}
+            >{body.second}</motion.p>
+            <motion.p
+              initial={{x: -40, opacity: 0}}
+              animate={{x: 0, opacity: 1, transition: {delay: 0.64, type: 'spring'}}}
+            >{body.third}</motion.p>
           </div>
         </div>
-        <div className={styles.leftImage}>
-          {/* <div
-            className='toTopCorner delay full'
-            style={{
-              display: 'block',
-              position: 'absolute',
-              top: '15%',
-              right: '10%',
-              backgroundColor: 'rgba(255,255,255,.5)',
-              height: '70%',
-              width: '80%',
-              opacity: '0',
-              border: '1px solid black'
-            }}
-          /> */}
+        <div className={[styles.leftImage, 'pattern-dots-lg gray-lighter', 'fade delay'].join(' ')}>
           <img
             src={image}
-            className='fade'
+            className='adjust'
             alt={alt || 'site image'}
             style={{
-              zIndex: '100',
+              zIndex: '90',
               width: '100%',
-              // width: '80%',
               position: 'relative',
-              // margin: '60px auto',
               display: 'block',
-              boxShadow: '0 10px 20px rgba(91,107,174,.15)'
+              boxShadow: '0 8px 16px rgba(0,2,12,.12)'
             }}
           />
-          {/* <div
-            className='toBottomCorner delay full'
-            style={{
-              display: 'block',
-              position: 'absolute',
-              bottom: '15%',
-              left: '10%',
-              backgroundColor: 'rgba(255,255,255,.5)',
-              height: '70%',
-              width: '80%',
-              opacity: '0',
-              border: '1px solid black'
-            }}
-          /> */}
         </div>
       </div>
     </section>

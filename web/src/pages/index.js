@@ -107,10 +107,8 @@ const IndexPage = props => {
       />
       <Landing
         title='Find your home in Utah.'
-        buttonTitleOne='Our Services'
-        buttonLinkOne='services'
-        buttonTitleTwo='Contact Us'
-        buttonLinkTwo='contact'
+        buttonTitle='View Listings'
+        buttonLink='https://kalielamb.exprealty.com/index.php'
         backgroundImage={BackgroundOne}
       />
       <Container>
